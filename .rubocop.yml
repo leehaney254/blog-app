@@ -53,3 +53,4 @@ Style/HashTransformValues:
 AllCops:
   Exclude:
     - bin/bundle
+    - db/schema.rb
