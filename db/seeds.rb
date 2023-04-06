@@ -89,6 +89,12 @@ Comment.create(post: second_post, user: third_user,
 Comment.create(post: seventh_post, user: second_user,
                text: 'Bought new gadget and it is not working as it should.
                                     What should I do? Whom should I contact?')
+Comment.create(post: first_post, user: first_user,
+  text: 'Wow, this is amazing! I never thought I could learn so much in such 
+                                  a short amount of time. Thank you for teaching me!')
+Comment.create(post: first_post, user: first_user,
+  text: 'I\'m sorry, but I have to disagree with you. Your argument seems 
+                                  flawed and lacks evidence to support it.')                                                       
 
 Like.create(post: first_post, user: second_user)
 Like.create(post: first_post, user: second_user)

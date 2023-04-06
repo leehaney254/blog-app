@@ -18,7 +18,7 @@
       </div>
     <% end %>
     <div class="container-fluid border">
-      <% @comments = Post.find(post.id).comments %>
+      <% @comments = Post.find(post.id).recent_comments %>
         <% @comments.each do |comment| %> 
           <div class="d-flex align-items-center">
             <h3><%= comment.user.name %></h3>:
