@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   def index
     @id = params[:user_id]
-    @posts = User.find(@id).posts
+    @pagy, @posts = pagy(User.find(@id).posts, items: 2)
     @user = User.find(@id)
   end
 

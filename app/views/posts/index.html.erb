@@ -5,6 +5,9 @@
     <p>Number of posts: <%= @user.posts_counter%></p>
   </div>
 </section>
+<div class="d-flex justify-content-end">
+  <%== pagy_nav(@pagy) %>
+</div>
 <section>
   <% @posts.each do |post| %>
     <%= link_to user_post_path(@id, post.id), class: "user-link" do %>
