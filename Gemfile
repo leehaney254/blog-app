@@ -8,7 +8,6 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 gem 'pagy'
 gem 'rails', '~> 7.0.4', '>= 7.0.4.3'
 
-
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
