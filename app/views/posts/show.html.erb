@@ -1,1 +1,18 @@
-<h1>Show post</h1>
+<div class="container-fluid border">
+  <div class="d-flex justify-content-between">
+    <h3><%= @post.title %></h3>
+    <div class="d-flex">
+      <p class="mx-3">Comments: <%= @post.comments_counter.nil? ? 0 : @post.comments_counter %></p>
+      <p>Likes: <%= @post.likes_counter.nil? ? 0 : @post.likes_counter %></p>
+    </div>
+  </div>
+  <p><%= @post.text %></p>
+</div>
+<div class="container-fluid border">
+  <% @comments.each do |comment| %> 
+    <div class="d-flex align-items-center">
+      <h3><%= comment.user.name %></h3>:
+      <h5 class="mx-2"><%= comment.text %></h5> 
+    </div>   
+  <% end %>
+</div>

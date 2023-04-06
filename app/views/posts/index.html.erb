@@ -1,1 +1,33 @@
-<h1>Users Posts</h1>
+<section class="d-flex align-items-center">
+  <%= image_tag @user.photo, :class => 'user-photo', alt: 'User photo' %>
+  <div class="pl-2 flex-grow-1 d-flex justify-content-around align-items-center">
+    <h2 class="fs-2"><%= @user.name %></h2>
+    <p>Number of posts: <%= @user.posts_counter%></p>
+  </div>
+</section>
+<div class="d-flex justify-content-end">
+  <%== pagy_nav(@pagy) %>
+</div>
+<section>
+  <% @posts.each do |post| %>
+    <%= link_to user_post_path(@id, post.id), class: "user-link" do %>
+      <div class="container-fluid border">
+        <h3><%= post.title %></h3>
+        <p><%= post.text %></p>
+        <div class="d-flex justify-content-end">
+          <p>Comments: <%= post.comments_counter.nil? ? 0 : post.comments_counter %></p>
+          <p class="mx-2">Likes: <%= post.likes_counter.nil? ? 0 : post.likes_counter %></p>
+        </div>
+      </div>
+    <% end %>
+    <div class="container-fluid border">
+      <% @comments = Post.find(post.id).recent_comments %>
+        <% @comments.each do |comment| %> 
+          <div class="d-flex align-items-center">
+            <h3><%= comment.user.name %></h3>:
+            <h5 class="mx-2"><%= comment.text %></h5> 
+          </div>   
+        <% end %>
+    </div>
+  <% end %>
+</section>

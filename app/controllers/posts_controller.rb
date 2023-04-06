@@ -1,5 +1,12 @@
 class PostsController < ApplicationController
-  def index; end
+  def index
+    @id = params[:user_id]
+    @pagy, @posts = pagy(User.find(@id).posts, items: 2)
+    @user = User.find(@id)
+  end
 
-  def show; end
+  def show
+    @post = Post.find(params[:id])
+    @comments = @post.comments
+  end
 end

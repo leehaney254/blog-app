@@ -54,5 +54,6 @@ AllCops:
   Exclude:
     - bin/bundle
     - db/schema.rb
+    - db/seeds.rb
 Lint/ScriptPermission:
   Enabled: false
