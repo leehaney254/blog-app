@@ -1,1 +1,13 @@
-<h1>This is a list of users</h1>
+<main class="p-4">
+  <% @users.each do |user| %>
+    <%= link_to user_path(user.id), class: "user-link" do %>
+      <section class="d-flex align-items-center border">
+        <%= image_tag user.photo, :class => 'user-photo', alt: 'User photo' %>
+        <div class="pl-2 flex-grow-1 d-flex justify-content-around align-items-center">
+          <p class="fs-2"><%= user.name %></p>
+          <p>Number of posts: <%= user.posts_counter%></p>
+        </div>
+      </section>
+    <% end %>
+  <% end %>
+</main>

@@ -1,1 +1,22 @@
-<h1>User with id</h1>
+<section class="d-flex align-items-center">
+  <%= image_tag @user.photo, :class => 'user-photo', alt: 'User photo' %>
+  <div class="pl-2 flex-grow-1 d-flex justify-content-around align-items-center">
+    <h2 class="fs-2"><%= @user.name %></h2>
+    <p>Number of posts: <%= @user.posts_counter%></p>
+  </div>
+</section>
+<section>
+  <h3>Bio</h3>
+  <p><%= @user.bio %></p>
+</section>
+ <div class="d-flex justify-content-end"><button type="button" class="btn btn-info"><%= link_to "See all Posts", user_posts_path(@user.id), { class: "user-link" } %></button></div>
+<section>
+  <% @posts.each do |post| %>
+      <div class="container-fluid border">
+        <h3><%= post.title %></h3>
+        <p><%= post.text %></p>
+        <p>Comments: <%= post.comments_counter.nil? ? 0 : post.comments_counter %></p>
+        <p>Likes: <%= post.likes_counter.nil? ? 0 : post.likes_counter %></p>
+      </div>
+  <% end %>
+</section>
