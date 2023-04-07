@@ -5,9 +5,11 @@ class LikesController < ApplicationController
     @like = @user.likes.new(post_id: @post)
 
     if @like.save
-      redirect_to user_post_path(@user.id, @post), success: 'Liked successfully.'
+      flash[:success] = 'Liked successfully.'
+      redirect_to user_post_path(@user.id, @post)
     else
-      redirect_to user_post_path(@user.id, @post), error: 'Sorry something went wrong'
+      flash.now[:error] = 'Sorry something went wrong'
+      redirect_to user_post_path(@user.id, @post)
     end
   end
 end
