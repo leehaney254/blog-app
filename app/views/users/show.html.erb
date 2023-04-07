@@ -9,7 +9,10 @@
   <h3>Bio</h3>
   <p><%= @user.bio %></p>
 </section>
- <div class="d-flex justify-content-end"><button type="button" class="btn btn-info"><%= link_to "See all Posts", user_posts_path(@user.id), { class: "user-link" } %></button></div>
+ <div class="d-flex justify-content-end">
+  <button type="button" class="btn btn-success mx-2"><%= link_to "Create Post", new_user_post_path(@user), { class: "user-link" } %></button>
+  <button type="button" class="btn btn-info"><%= link_to "See all Posts", user_posts_path(@user.id), { class: "user-link" } %></button>
+ </div>
 <section>
   <% @posts.each do |post| %>
       <div class="container-fluid border">
