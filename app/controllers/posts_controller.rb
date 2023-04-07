@@ -27,10 +27,10 @@ class PostsController < ApplicationController
       likes_counter: 0
     )
     if @post.save
-      flash[:success] = "Post saved successfully."
+      flash[:success] = 'Post saved successfully.'
       redirect_to user_path(@user.id)
     else
-      flash.now[:error] = "Sorry something went wrong"
+      flash.now[:error] = 'Sorry something went wrong'
       render :new
     end
   end
