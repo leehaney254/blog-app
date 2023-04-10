@@ -17,7 +17,7 @@
   <button type="button" class="btn btn-success mx-2"><%= link_to "Comment", new_user_post_comment_path( post_id: @post.id), { class: "user-link" } %></button>
 </div>
 <div class="container-fluid border">
-  <% @comments.each do |comment| %> 
+  <% @post.comments.each do |comment| %> 
     <div class="d-flex align-items-center">
       <h3><%= comment.user.name %></h3>:
       <h5 class="mx-2"><%= comment.text %></h5> 
