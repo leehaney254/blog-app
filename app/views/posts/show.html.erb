@@ -1,3 +1,5 @@
+<%= render "partials/error" %>
+
 <div class="container-fluid border">
   <div class="d-flex justify-content-between">
     <h3><%= @post.title %></h3>
@@ -7,6 +9,12 @@
     </div>
   </div>
   <p><%= @post.text %></p>
+</div>
+<div class="d-flex justify-content-end">
+  <%= form_with model: @like, url: user_post_likes_path(@user, @post), scope: :like do |form|%>
+     <%= form.submit 'Like post' %>
+  <% end %>
+  <button type="button" class="btn btn-success mx-2"><%= link_to "Comment", new_user_post_comment_path( post_id: @post.id), { class: "user-link" } %></button>
 </div>
 <div class="container-fluid border">
   <% @comments.each do |comment| %> 
