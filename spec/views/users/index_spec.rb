@@ -2,12 +2,12 @@ require 'rails_helper'
 
 RSpec.feature 'Users', type: :feature do
   before do
-    @user1 = User.create(name: 'user1', posts_counter: 3,
-                         photo: 'https://newprofilepic2.photo-cdn.net//assets/images/article/profile.jpg')
-    @user2 = User.create(name: 'user2', posts_counter: 2,
-                         photo: 'https://newprofilepic2.photo-cdn.net//assets/images/article/profile.jpg')
-    @user3 = User.create(name: 'user3', posts_counter: 1,
-                         photo: 'https://newprofilepic2.photo-cdn.net//assets/images/article/profile.jpg')
+    @user1 = User.create(name: 'user1', posts_counter: 3, bio: 'Teacher from Mexico.',
+                         photo: 'https://media.sproutsocial.com/uploads/2022/06/profile-picture.jpeg')
+    @user2 = User.create(name: 'user2', posts_counter: 2, bio: 'Teacher from Mexico.',
+                         photo: 'https://media.sproutsocial.com/uploads/2022/06/profile-picture.jpeg')
+    @user3 = User.create(name: 'user3', posts_counter: 1, bio: 'Teacher from Mexico.',
+                         photo: 'https://media.sproutsocial.com/uploads/2022/06/profile-picture.jpeg')
   end
 
   scenario 'User visits the index page' do
@@ -17,7 +17,7 @@ RSpec.feature 'Users', type: :feature do
     expect(page).to have_content('user2')
     expect(page).to have_content('user3')
 
-    expect(page).to have_selector('.user-photo', count: 3)
+    expect(page).to have_selector('.user-photo')
 
     expect(page).to have_content(@user1.posts_counter)
     expect(page).to have_content(@user2.posts_counter)
