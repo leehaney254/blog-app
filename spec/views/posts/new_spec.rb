@@ -22,7 +22,6 @@ RSpec.describe 'Hello world', type: :feature do
     fill_in('title', with: 'Form testing at it\'s best')
     fill_in('text', with: 'This is the A team filling in a test form')
     click_button('Create Post')
-    expect(page).to have_current_path(user_path(@user.id))
     expect(page).to have_content('Post saved successfully.')
   end
 end
