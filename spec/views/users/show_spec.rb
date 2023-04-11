@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature 'Users Posts', type: :feature do
   before do
-    @user1 = User.create(name: 'user1', posts_counter: 3, photo: 'https://unsplash.com/photos/F_-0BxGuVvo')
+    @user1 = User.create(name: 'user1', posts_counter: 3, photo: 'https://newprofilepic2.photo-cdn.net//assets/images/article/profile.jpg')
     @user1.posts.create(title: 'Post1', text: 'This is my first post', comments_counter: 0, likes_counter: 0)
     @post2 = @user1.posts.create(title: 'Post2', text: 'This is my second post', comments_counter: 0, likes_counter: 0)
     @user1.posts.create(title: 'Post3', text: 'This is my third post', comments_counter: 0, likes_counter: 0)

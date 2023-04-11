@@ -3,11 +3,11 @@ require 'rails_helper'
 RSpec.feature 'Users', type: :feature do
   before do
     @user1 = User.create(name: 'user1', posts_counter: 3,
-                         photo: 'https://unsplash.com/photos/F_-0BxGuVvo')
+                         photo: 'https://newprofilepic2.photo-cdn.net//assets/images/article/profile.jpg')
     @user2 = User.create(name: 'user2', posts_counter: 2,
-                         photo: 'https://unsplash.com/photos/F_-0BxGuVvo')
+                         photo: 'https://newprofilepic2.photo-cdn.net//assets/images/article/profile.jpg')
     @user3 = User.create(name: 'user3', posts_counter: 1,
-                         photo: 'https://unsplash.com/photos/F_-0BxGuVvo')
+                         photo: 'https://newprofilepic2.photo-cdn.net//assets/images/article/profile.jpg')
   end
 
   scenario 'User visits the index page' do
