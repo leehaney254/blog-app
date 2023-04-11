@@ -18,6 +18,12 @@ RSpec.describe 'Hello world', type: :feature do
     assert page.has_selector?(:xpath, "//img[contains(@src,'https://wallpapers.com/images/featured/87h46gcobjl5e4xu.jpg')]")
   end
 
+  scenario 'When a post post is clicked it redirects to post show page' do
+    link = find('.user-link')
+    link.click
+    expect(page).to have_current_path(user_post_path(@user.id, @second_post.id))
+  end
+
   scenario 'index page has username' do
     assert page.has_content?(@user.name)
   end
