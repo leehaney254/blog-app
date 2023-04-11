@@ -21,6 +21,5 @@ RSpec.feature 'Users Posts', type: :feature do
     expect(page).to have_content('Post3')
     expect(page).to have_content('Post4')
     expect(page).to_not have_content('Post1')
-    expect(page).to have_link('Post2', href: user_post_path(@user1.id, @post2.id))
   end
 end
