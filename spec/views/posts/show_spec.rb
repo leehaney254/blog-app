@@ -31,10 +31,6 @@ RSpec.describe 'Hello world', type: :feature do
     assert page.has_selector?('p', text: @second_post.text)
   end
 
-  scenario 'show page has username comment' do
-    assert page.has_selector?('h3', text: @first_comment.user.name)
-  end
-
   scenario 'show page has comment\'s username' do
     assert page.has_selector?('h3', text: @first_comment.user.name)
   end

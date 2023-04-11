@@ -20,8 +20,8 @@ class PostsController < ApplicationController
     @user = current_user
     @post = Post.new(
       author: @user,
-      title: params[:post][:title],
-      text: params[:post][:text],
+      title: params[:title],
+      text: params[:text],
       comments_counter: 0,
       likes_counter: 0
     )
