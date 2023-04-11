@@ -7,7 +7,6 @@ RSpec.describe 'Hello world', type: :feature do
     @second_post = Post.create(author: @user, title: 'Hello', text: 'This is my third post', comments_counter: 0,
                                likes_counter: 0)
     @first_comment = Comment.create(post: @second_post, user: @user, text: 'Hi jxu!')
-    
   end
 
   scenario 'show page url and form url' do
@@ -26,5 +25,4 @@ RSpec.describe 'Hello world', type: :feature do
     expect(page).to have_current_path(user_path(@user.id))
     expect(page).to have_content('Post saved successfully.')
   end
-
 end
