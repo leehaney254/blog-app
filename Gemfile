@@ -58,7 +58,7 @@ group :development, :test do
 
   gem 'capybara'
 
-   gem 'selenium-webdriver'
+  gem 'selenium-webdriver'
   gem 'webdrivers'
 end
 
