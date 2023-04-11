@@ -1,14 +1,13 @@
 class PostsController < ApplicationController
   def index
     @id = params[:user_id]
-    @pagy, @posts = pagy(User.find(@id).posts, items: 2)
     @user = User.find(@id)
+    @pagy, @posts = pagy(@user.posts.includes(comments: [:user]), items: 2)
   end
 
   def show
     @user = User.find(params[:user_id])
-    @post = Post.find(params[:id])
-    @comments = @post.comments
+    @post = Post.includes(comments: [:user]).find(params[:id])
     @like = Like.new
   end
 
@@ -21,8 +20,8 @@ class PostsController < ApplicationController
     @user = current_user
     @post = Post.new(
       author: @user,
-      title: params[:post][:title],
-      text: params[:post][:text],
+      title: params[:title],
+      text: params[:text],
       comments_counter: 0,
       likes_counter: 0
     )

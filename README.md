@@ -10,6 +10,8 @@
   - [💻 Getting Started ](#-getting-started-)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
+    - [Usage](#usage)
+    - [Run tests](#run-tests)
   - [👥 Author ](#-author-)
   - [🔭 Future Features ](#-future-features-)
   - [🤝 Contributing ](#-contributing-)
@@ -73,10 +75,18 @@ To get a local copy up and running, follow these steps:
 ### Prerequisites
 
 In order to run this project you need:
-
-- Git and GitHub
-- A code editor
-- Ruby installed
+- install ruby
+```sh
+  sudo apt-get install ruby-full
+```
+- install rails
+```sh
+ gem install rails
+```
+- install postgresql
+```sh
+  sudo apt-get install postgresql postgresql-contrib libpq-dev
+```
 
 ### Setup
 
@@ -86,6 +96,24 @@ Clone this repository to your desired folder:
 - Clone the project to your directory by running
   - `git clone https://github.com/leehaney254/blog-app.git`
 
+### Usage
+
+To run the project, execute the following command:
+
+```sh
+  rails server
+```
+
+### Run tests
+
+To run tests, run the following command:
+
+```sh
+  rspec
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## 👥 Author <a name="authors"></a>
 
 👤 **Leehaney George**
@@ -93,6 +121,12 @@ Clone this repository to your desired folder:
 - GitHub: [@githubhandle](https://github.com/leehaney254)
 - Twitter: [@twitterhandle](https://twitter.com/Lee06785586)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/leehaney-george-0a4a51178/)
+  
+👤 **Yuvenal Njoroge**
+
+- GitHub: [@githubhandle](https://github.com/yuvenalmash)
+- Twitter: [@twitterhandle](https://twitter.com/_Juvenal_)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/yuvenal-njoroge)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
