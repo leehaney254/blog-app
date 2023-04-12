@@ -17,7 +17,7 @@ RSpec.feature 'Users', type: :feature do
     expect(page).to have_content('user2')
     expect(page).to have_content('user3')
 
-    expect(page).to have_selector('.user-photo')
+    expect(page).to have_selector('.user-photo', count: 3)
 
     expect(page).to have_content(@user1.posts_counter)
     expect(page).to have_content(@user2.posts_counter)
