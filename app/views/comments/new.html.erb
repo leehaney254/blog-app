@@ -3,9 +3,10 @@
 <%= render "partials/error" %>
 
 <%= form_with model: @comment, url: user_post_comments_path(@post), local: true do |form| %>
-  <div>
+  <div class="field form-group">
     <%= form.label :comment %>
-    <%= form.text_area :comment %>
+    <%= form.text_area :comment, class: "form-control" %>
   </div>
+  <br />
   <%= form.submit "Comment", class: "btn btn-primary" %>
 <% end %>
