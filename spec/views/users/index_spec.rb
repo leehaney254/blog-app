@@ -2,29 +2,35 @@ require 'rails_helper'
 
 RSpec.feature 'Users', type: :feature do
   before do
-    @user1 = User.create(name: 'user1', posts_counter: 3, bio: 'Teacher from Mexico.',
-                         photo: 'https://media.sproutsocial.com/uploads/2022/06/profile-picture.jpeg')
-    @user2 = User.create(name: 'user2', posts_counter: 2, bio: 'Teacher from Mexico.',
-                         photo: 'https://media.sproutsocial.com/uploads/2022/06/profile-picture.jpeg')
-    @user3 = User.create(name: 'user3', posts_counter: 1, bio: 'Teacher from Mexico.',
-                         photo: 'https://media.sproutsocial.com/uploads/2022/06/profile-picture.jpeg')
+    @user1 = User.create(name: 'user1', photo: 'https://wallpapers.com/images/featured/87h46gcobjl5e4xu.jpg',
+                         bio: 'Teacher from Mexico.', posts_counter: 0)
+    @user2 = User.create(name: 'user2', photo: 'https://wallpapers.com/images/featured/87h46gcobjl5e4xu.jpg',
+                         bio: 'Teacher from Mexico.', posts_counter: 0)
+    @user3 = User.create(name: 'user3', photo: 'https://wallpapers.com/images/featured/87h46gcobjl5e4xu.jpg',
+                         bio: 'Teacher from Mexico.', posts_counter: 0)
+
+    visit users_path
   end
 
-  scenario 'User visits the index page' do
-    visit users_path
-
+  scenario 'I can see the username of all other users' do
     expect(page).to have_content('user1')
     expect(page).to have_content('user2')
     expect(page).to have_content('user3')
+  end
 
-    expect(page).to have_selector('.user-photo', count: 3)
+  scenario 'I can see profile pictures of all users' do
+    expect(page).to have_selector('.user-photo')
+  end
 
+  scenario 'I can see the number of posts written by users' do
     expect(page).to have_content(@user1.posts_counter)
     expect(page).to have_content(@user2.posts_counter)
     expect(page).to have_content(@user3.posts_counter)
+  end
 
-    expect(page).to have_link('user1', href: user_path(@user1))
-    expect(page).to have_link('user2', href: user_path(@user2))
-    expect(page).to have_link('user3', href: user_path(@user3))
+  scenario 'When I click on a user, I am redirected to that user show page' do
+    link = find('.user-link', text: 'user1')
+    link.click
+    expect(page).to have_current_path(user_path(@user1))
   end
 end

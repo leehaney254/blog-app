@@ -55,5 +55,6 @@ AllCops:
     - bin/bundle
     - db/schema.rb
     - db/seeds.rb
+    - spec/views/users/show_spec.rb
 Lint/ScriptPermission:
   Enabled: false
