@@ -41,6 +41,6 @@ class PostsController < ApplicationController
     else
       flash[:alert] = "Failed to delete friend"
     end
-    redirect_to user_path(@user.id)
+    redirect_to users_path
   end
 end
