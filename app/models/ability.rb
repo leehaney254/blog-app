@@ -16,7 +16,7 @@ class Ability
       can :manage, Post, author_id: user.id
       can :manage, Comment, user_id: user.id
     end
-      
+
     #
     # The first argument to `can` is the action you are giving the user
     # permission to do.
