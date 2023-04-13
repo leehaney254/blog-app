@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
+
   def index
     @id = params[:user_id]
     @user = User.find(@id)
@@ -32,5 +34,15 @@ class PostsController < ApplicationController
       flash.now[:error] = 'Sorry something went wrong'
       render :new
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    if @post.destroy
+      flash[:notice] = 'Friend deleted successfully!'
+    else
+      flash[:alert] = 'Failed to delete friend'
+    end
+    redirect_to users_path
   end
 end

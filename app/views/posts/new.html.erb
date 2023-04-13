@@ -5,11 +5,11 @@
 <%= form_with model: @post, url: user_posts_path(@user), local: true do |form| %>
   <div class="field form-group">
     <%= form.label :title %>
-    <%= form.text_field :title, name: 'title', class: "form-control" %>
+    <%= form.text_field :title, name: 'title', class: "form-control", required: true %>
   </div>
   <div class="field form-group">
     <%= form.label :text %>
-    <%= form.text_area :text, name: 'text', class: "form-control" %>
+    <%= form.text_area :text, name: 'text', class: "form-control", required: true %>
   </div>
   <br />
   <%= form.submit "Create Post", class: "btn btn-primary" %>
