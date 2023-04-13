@@ -37,9 +37,9 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     if @post.destroy
-      flash[:notice] = "Friend deleted successfully!"
+      flash[:notice] = 'Friend deleted successfully!'
     else
-      flash[:alert] = "Failed to delete friend"
+      flash[:alert] = 'Failed to delete friend'
     end
     redirect_to users_path
   end
