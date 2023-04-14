@@ -9,7 +9,7 @@ gem 'cancancan'
 gem 'devise', '~> 4.9', '>= 4.9.2'
 gem 'pagy'
 gem 'rails', '~> 7.0.4', '>= 7.0.4.3'
-
+gem 'devise-jwt'
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
