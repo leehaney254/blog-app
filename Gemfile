@@ -9,10 +9,12 @@ gem 'cancancan'
 gem 'devise', '~> 4.9', '>= 4.9.2'
 gem 'pagy'
 gem 'rails', '~> 7.0.4', '>= 7.0.4.3'
-
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
+gem 'jwt'
+# Use ActiveModel has_secure_password
+gem 'bcrypt', '~> 3.1.7'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
 
