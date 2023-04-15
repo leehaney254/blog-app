@@ -4,6 +4,7 @@ class Ability
   def initialize(user)
     # Define abilities for the user here. For example:
     # define what user can do if not logged in
+    user ||= User.new
     can :read, :all
 
     # define what happens when A User is logged in
