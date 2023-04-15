@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     post 'login', to: 'login#index'
     resources :users, only: [:index] do
       resources :posts, only: [:index] do
-        resources :comments, only: [:index, :create]
+        resources :comments, only: %i[index create]
       end
     end
   end
